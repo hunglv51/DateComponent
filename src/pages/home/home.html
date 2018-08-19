@@ -5,9 +5,9 @@
             <ion-icon name="arrow-dropleft"></ion-icon>
           </button>
      </ion-buttons>
-    <ion-title>
+    <ion-title (click)="toggleCalendar()">
       Week {{weekNumber}}
-      <div>{{timeRange}}</div>
+      <div>{{beginDate}} - {{endDate}}</div>
 
     </ion-title>
     <ion-buttons right>
@@ -26,6 +26,7 @@
         (onTitleChanged)="onViewTitleChanged($event)"
         (onTimeSelected)="onTimeSelected($event)"
         step="31"
-        class="calendar">
+        class="calendar"
+        *ngIf="showCalendar">
       </calendar>
 </ion-content>
